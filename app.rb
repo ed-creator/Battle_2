@@ -7,6 +7,7 @@ class Battle < Sinatra::Base
 enable :sessions
 
   get '/' do
+    nbfidsnbou
    erb :index
   end
 
@@ -30,7 +31,7 @@ enable :sessions
     erb :validate
   end
   run! if app_file == $0
-  
+
   get '/game_over' do
     $game.game_over
   end
