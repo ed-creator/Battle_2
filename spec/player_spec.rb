@@ -11,9 +11,4 @@ describe Player do
     player.increase_hp
     expect(player.hp).to eq 11
   end
-
-  it 'expects player to have won when HP >= 100' do
-    10.times {player.increase_hp}
-    expect(player.won?).to be_truthy
-  end
 end

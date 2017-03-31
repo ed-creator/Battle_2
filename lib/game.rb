@@ -20,13 +20,11 @@ class Game
     player.increase_hp
   end
   
-  def winner
-    healer.won ? healer : receiver
+  def game_over
+    "#{healer.name} has won the game!" if winner?
   end
 
-  private
-
-  def finished?
-    healer.won || receiver.won
+  def winner?
+    healer.hp >= 20? true : false
   end
 end

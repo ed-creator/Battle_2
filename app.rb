@@ -26,7 +26,12 @@ enable :sessions
     @game = $game
     @game.validate(@game.receiver)
     @game.switch_players
+    redirect '/game_over' if @game.winner?
     erb :validate
   end
   run! if app_file == $0
+  
+  get '/game_over' do
+    $game.game_over
+  end
 end
